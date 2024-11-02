@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'social_django',  
     'easy_thumbnails',
+    'actions.apps.ActionsConfig',
 ]
 
 MIDDLEWARE = [
@@ -166,3 +167,5 @@ ABSOLUTE_URL_OVERRIDES = {
 }
 
 THUMBNAIL_DEBUG=True
+
+# python manage.py runserver_plus --cert-file cert.crt

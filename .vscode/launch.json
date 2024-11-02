@@ -13,6 +13,16 @@
             "django": true,
             "justMyCode": false,
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Python Djrunserver_plus",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}\\manage.py",
+            "args": ["runserver_plus", "--cert-file", "cert.crt"],
+            "django": true,
+            "justMyCode": false,
+            "console": "integratedTerminal"
         }
     ]
 }
