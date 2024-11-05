@@ -42,12 +42,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'debug_toolbar',
     'social_django',  
     'easy_thumbnails',
     'actions.apps.ActionsConfig',
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -167,5 +169,14 @@ ABSOLUTE_URL_OVERRIDES = {
 }
 
 THUMBNAIL_DEBUG=True
+
+INTERNAL_IPS = {
+    '127.0.0.1',
+}
+
+if DEBUG:
+    import mimetypes
+    mimetypes.add_type('application/javascript', '.js', True)
+    mimetypes.add_type('text/css', '.css', True)
 
 # python manage.py runserver_plus --cert-file cert.crt
